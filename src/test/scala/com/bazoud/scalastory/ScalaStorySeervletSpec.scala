@@ -13,4 +13,13 @@ class ScalaStorySeervletSpec extends ScalatraSpec { def is =
   def root200 = get("/") {
     status must_== 200
   }
+
+  def query_q_mail = get("/?q=Quelle est ton adresse email") {
+    status must_== 200
+    response must_== "olivier.bazoud@gmail.com"
+  }
+
+  def query_q_wtf = get("/?q=wtf") {
+    status must_== 403
+  }
 }
