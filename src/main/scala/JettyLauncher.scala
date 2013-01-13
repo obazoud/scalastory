@@ -21,8 +21,14 @@ object JettyLauncher {
     context.addServlet(classOf[ScalaStoryServlet], "/");
     context.setResourceBase("src/main/webapp")
 
-    server.start
-    server.join
+    try {
+      server.start
+      server.join
+    } catch {
+      case e: Exception => {
+        e.printStackTrace()
+        System.exit(1)
+      }
+    }
   }
-
 }
