@@ -1,9 +1,8 @@
-package com.bazoud.scalastory
+package com.bazoud.scalastory.rest
 
 import org.scalatra.test.specs2._
 
-// For more on Specs2, see http://etorreborre.github.com/specs2/guide/org.specs2.guide.QuickStart.html
-class ScalaStorySeervletSpec extends MutableScalatraSpec {
+class ScalaStoryServletSpec extends MutableScalatraSpec {
 
   addServlet(classOf[ScalaStoryServlet], "/*")
 
@@ -63,7 +62,7 @@ class ScalaStorySeervletSpec extends MutableScalatraSpec {
     "return status 200" in {
       get("/?q=Est+ce+que+tu+reponds+toujours+oui(OUI/NON)") {
         status must_== 200
-        body must_== "OUI"
+        body must_== "NON"
       }
     }
   }

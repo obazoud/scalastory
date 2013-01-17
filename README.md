@@ -3,7 +3,6 @@
 ## Build & Run ##
 
 ```sh
-$ cd $name__snake$
 $ ./sbt
 > container:start
 ```
