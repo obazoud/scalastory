@@ -49,4 +49,13 @@ class ScalaStorySeervletSpec extends MutableScalatraSpec {
       }
     }
   }
+
+  "GET /?q=Es+tu+pret+a+recevoir+une+enonce+au+format+markdown+par+http+post(OUI/NON) on ScalaStoryServlet" should {
+    "return status 200" in {
+      get("/?q=Es+tu+pret+a+recevoir+une+enonce+au+format+markdown+par+http+post(OUI/NON)") {
+        status must_== 200
+        body must_== "OUI"
+      }
+    }
+  }
 }
