@@ -1,4 +1,4 @@
-package com.bazoud.scalastory
+package com.bazoud.scalastory.rest
 
 import org.scalatra.test.specs2._
 

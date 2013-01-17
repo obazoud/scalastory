@@ -1,6 +1,7 @@
 import com.bazoud.scalastory._
 import org.scalatra._
 import javax.servlet.ServletContext
+import rest.{EnonceStoryServlet, StartupServlet, ScalaStoryServlet}
 
 /**
  * This is the Scalatra bootstrap file. You can use it to mount servlets or
@@ -9,8 +10,9 @@ import javax.servlet.ServletContext
  */
 class Scalatra extends LifeCycle {
   override def init(context: ServletContext) {
-
-    // Mount one or more servlets
+    println("Mount one or more servlets")
+    context.addServlet("startup", classOf[StartupServlet]).setLoadOnStartup(5)
+    context.mount(new EnonceStoryServlet, "/enonce/*")
     context.mount(new ScalaStoryServlet, "/*")
   }
 }
