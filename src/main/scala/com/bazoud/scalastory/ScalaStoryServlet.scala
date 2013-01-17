@@ -10,6 +10,7 @@ class ScalaStoryServlet extends ScalatraServlet with ScalateSupport {
       params("q") match {
         case "Quelle est ton adresse email" => Ok("olivier.bazoud@gmail.com")
         case "Es tu heureux de participer(OUI/NON)" => Ok("OUI")
+        case "Es tu abonne a la mailing list(OUI/NON)" => Ok("OUI")
         case _   => BadRequest("oops: " + params("q"))
       }
     } catch {

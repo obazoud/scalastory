@@ -40,4 +40,13 @@ class ScalaStorySeervletSpec extends MutableScalatraSpec {
       }
     }
   }
+
+  "GET /?q=Es+tu+abonne+a+la+mailing+list(OUI/NON) on ScalaStoryServlet" should {
+    "return status 200" in {
+      get("/?q=Es+tu+abonne+a+la+mailing+list(OUI/NON)") {
+        status must_== 200
+        body must_== "OUI"
+      }
+    }
+  }
 }
