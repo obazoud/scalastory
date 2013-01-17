@@ -12,7 +12,7 @@ class ScalaStoryServlet extends ScalatraServlet with ScalateSupport {
         case "Es tu heureux de participer(OUI/NON)" => Ok("OUI")
         case "Es tu abonne a la mailing list(OUI/NON)" => Ok("OUI")
         case "Es tu pret a recevoir une enonce au format markdown par http post(OUI/NON)" => Ok("OUI")
-        case "Est ce que tu reponds toujours oui(OUI/NON)" => Ok("OUI")
+        case "Est ce que tu reponds toujours oui(OUI/NON)" => Ok("NON")
         case _   => BadRequest("oops: " + params("q"))
       }
     } catch {
